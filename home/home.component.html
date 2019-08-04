@@ -1,0 +1,25 @@
+
+<div class="container color-dark">
+  <div class="col">
+    <p>Add a stock</p>
+  </div>
+  <div class="col">
+    <p>your stock are displayed below ({{ itemCount }})</p>
+  </div>
+</div>
+<div class="container color-light">
+  <div class="col">
+    <p class="sm"> use this form to add your list</p>
+    <form>
+      <input type="text" class="txt" name="item" placeholder="stock list..."[(ngModel)]="listText">
+      <br><span>{{ listText }}</span>
+      <input type="submit" class="btn" [value]="btnText"  (click)="addList()">
+      </form>
+  </div>
+  <div class="col">
+    <p class="list-container" *ngFor="let list of lists; let i = index" (click)="removeList(i)">
+      {{ list }}
+    </p>
+  </div>
+</div>
+
